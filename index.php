@@ -3,7 +3,7 @@
   <meta charset='utf-8'>
     <meta content='IE=edge' http-equiv='X-UA-Compatible'>
     <meta content='width=device-width, initial-scale=1' name='viewport'>
-    <meta name="KEYWORDS" content="Davron, Akil, uzbek, russian, interpreter, web developer, new york, california, technology, entrepreneur, gwu, george washington university, gw, school of business, international business, computer science, gwsb, loyola, tashkent, toshkent, akilbaev, даврон, акилбаев, акил, акыл, ташкент, юнус-абад, 257, школа"> 
+    <meta name="KEYWORDS" content="Davron, Akil, web developer, new york, california, technology, gwu, george washington university, gw, school of business, international business, computer science, gwsb, loyola, tashkent, toshkent"> 
     <meta name="DESCRIPTION" content="Davron Akil's Home Page">
     <title>Davron Akil | Home</title>
     <link href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css' rel='stylesheet'>
