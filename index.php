@@ -1,3 +1,16 @@
+<?php
+
+//Detect special conditions devices
+$iPod    = stripos($_SERVER['HTTP_USER_AGENT'],"iPod");
+$iPhone  = stripos($_SERVER['HTTP_USER_AGENT'],"iPhone");
+$iPad    = stripos($_SERVER['HTTP_USER_AGENT'],"iPad");
+$Android = stripos($_SERVER['HTTP_USER_AGENT'],"Android");
+$webOS   = stripos($_SERVER['HTTP_USER_AGENT'],"webOS");
+
+
+
+?> 
+
 <!DOCTYPE html>
 <head>
     <meta charset='utf-8'>
@@ -7,9 +20,9 @@
     <meta name="KEYWORDS" content="Davron, Akil, web developer, new york, california, technology, gwu, george washington university, gw, school of business, international business, computer science, gwsb, loyola, tashkent, toshkent"> 
     <meta name="DESCRIPTION" content="Davron Akil's Home Page">
     <title>Davron Akil | Home</title>
-    <link href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css' rel='stylesheet'>
+    <link href='//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
     <link href='css/screen.css' rel='stylesheet'>
-    <link href='https://fonts.googleapis.com/css?family=BenchNine:700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=BenchNine:700' rel='stylesheet' type='text/css'>
 
   <style>   
 
@@ -18,6 +31,7 @@
       background: url("./img/03425_windowtogothamcity_2560x1600.jpg") no-repeat fixed center top;
       background-size: cover;
       color: white;
+      background-color: #000000;
       height: auto;
       margin-left: auto;
       margin-right: auto;
@@ -29,6 +43,10 @@
 
     p {
       font-size: 22px;
+    }
+
+    a:hover {
+      color: #FD6A32;
     }
 
     .profile {
@@ -114,7 +132,6 @@
     overflow: auto;
 }
 
-
 #preloader {
     position:fixed;
     top:0;
@@ -141,49 +158,62 @@
 </head>
 <body>
 
+<!-- Preloader -->
+<div id="preloader">
+    <div id="status">&nbsp;
+      <!-- font color="#FFFFFF">Loading components...</font --></div>
+</div>
 
 <div class="profile"></div>  
 <p class="headline">DAVRON AKÍL</p>
-<p class="subheadline">Web Developer, Tech Enthusiast, Crypto-Evangelist</p>  
-<p class="subsubheadline">and frankly lots of other things</p>  
+<p class="subheadline">Digital Designer, Developer, Creator of Things</p>  
+<!-- p class="subsubheadline">and frankly lots of other things</p -->  
 
 
 
 <div class='section social'>
   <li class='twitter'>
-    <a href='twitter:///user?screen_name=dav917'>
+    <?php 
+    if( $iPad || $iPhone || $iPod ){
+      echo "<a href='twitter:///user?screen_name=dav917'>";
+    }
+    else {
+     echo "<a href='//twitter.com/dav917'>";
+    }
+    ?>
        <i class='fa fa-twitter'></i>
         Twitter
     </a>
   </li>
-  <li class='briefcase'>
-    <a href='http://pixelkraft.net'>
-    <i class="fa fa-book"></i>
-      Portfolio
-    </a>
-  </li>
   <li class='linkedin'>
-    <a href='linkedin://#profile/84245914'>
+    <a href='//www.linkedin.com/in/davron/'>
       <i class='fa fa-linkedin'></i>
       LinkedIn
     </a>
   </li>
     <li class='facebook'>
-    <a href='fb://profile?id=%davron'>
+      <?php 
+    if( $iPad || $iPhone || $iPod ){
+      echo "<a href='fb://profile?id=%davron'>";
+    }
+    else {
+     echo "<a href='//facebook.com/davron'>";
+    }
+    ?>
       <i class='fa fa-facebook'></i>
       Facebook
     </a>
   </li>
-    <li class='github'>
-    <a href='http://github.com/davronakil'>
-      <i class='fa fa-github'></i>
-      Github
+  <li class='briefcase'>
+    <a href='//pixelkraft.net'>
+    <i class="fa fa-book"></i>
+      Portfolio
     </a>
   </li>
-  <li class='bitcoin'>
-    <a href='bitcoin:1E7b4eGzY4m4zW2jWtWVt4PN2px3jJAeEA'>
-      <i class='fa fa-bitcoin'></i>
-      Wallet
+  <li class='telegram'>
+    <a href='http://t.me/mp3vibes'>
+      <i class='fa fa-telegram'></i>
+      Music
     </a>
   </li>
   <li class='envelope'>
@@ -196,9 +226,35 @@
   
 </div>
 
+<script type="text/javascript">
+  var loc = window.location.href+'';
+    if (loc.indexOf('http://')==0){
+        window.location.href = loc.replace('http://','https://');
+    }
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//web.archive.org/web/20180809093225/http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-18130523-1', 'akil.me');
+  ga('send', 'pageview');
+
+</script>
 
 
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+<script type="text/javascript">
+  //<![CDATA[
+    $(window).load(function() { // makes sure the whole site is loaded
+      $('#status').fadeOut(); // will first fade out the loading animation
+      $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
+      $('body').delay(350).css({'overflow':'visible'});
+    })
+  //]]>
+</script>
 
 
 
