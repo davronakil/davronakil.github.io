@@ -1,0 +1,26 @@
+/* TEAM */
+
+                            
+Your title: Davron Akil.
+
+                            
+Site: https://akil.me
+
+                            
+Twitter: @dav917
+
+                            
+Location: Sacramento, CA
+
+                         
+
+/* SITE */
+
+                            
+Last update: 2019/05/14
+
+                            
+Standards: HTML5, CSS3, JavaScript, PHP
+
+                            
+Components: jQuery

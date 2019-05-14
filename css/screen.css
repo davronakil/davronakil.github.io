@@ -7,11 +7,11 @@
 
 /* line 51, ../sass/screen.scss */
 .social {
-  margin-top: 30px;
+  margin-top: -10px;
   text-align: center;
   font: 100 72px 'Raleway', sans-serif;
   color: white;
-  font-size: 36px; }
+  font-size: 32px; }
   /* line 56, ../sass/screen.scss */
   .social li {
     list-style: none;
